@@ -22,28 +22,28 @@ from sklearn.metrics.pairwise import euclidean_distances
 
 #pip3 install tika
 
-from google.colab import drive
+#from google.colab import drive
 
-drive.mount('/content/drive/')
+#drive.mount('/content/drive/')
 #drive.mount('/content/drive/MyDrive/ColabNotebooks/FP2')
 
-path = "/content/drive/MyDrive/ColabNotebooks/FP2"
+#path = "/content/drive/MyDrive/ColabNotebooks/FP2"
 
 from tika import parser 
 # pip install tika
 
 
 
-raw_jd = parser.from_file('/content/drive/MyDrive/ColabNotebooks/FP2/JD.pdf')
+raw_jd = parser.from_file('JD.pdf')
 jd=raw_jd['content']
 
-raw_resume_ds1 = parser.from_file('/content/drive/MyDrive/ColabNotebooks/FP2/1.pdf')
+raw_resume_ds1 = parser.from_file('1.pdf')
 resume1=raw_resume_ds1['content']
 
-raw_resume_ds2 = parser.from_file('/content/drive/MyDrive/ColabNotebooks/FP2/2.pdf')
+raw_resume_ds2 = parser.from_file('2.pdf')
 resume2=raw_resume_ds2['content']
 
-raw_resume_PM = parser.from_file('/content/drive/MyDrive/ColabNotebooks/FP2/PM.pdf')
+raw_resume_PM = parser.from_file('PM.pdf')
 resume_PM=raw_resume_PM['content']
 
 #resume2
