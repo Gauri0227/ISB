@@ -16,10 +16,6 @@ from sklearn.metrics.pairwise import euclidean_distances
 
 # In[2]:
 
-
-pwd
-
-
 # In[3]:
 
 
