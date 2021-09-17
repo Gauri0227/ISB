@@ -88,4 +88,4 @@ final_output['Score']=output
 
 final_output.drop(final_output.head(1).index, inplace=True)
 
-final_output.sort_values(by=['Score'],ascending=False)
+print(final_output.sort_values(by=['Score'],ascending=False).head(10))
