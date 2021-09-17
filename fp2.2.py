@@ -55,7 +55,7 @@ def phone_no(string):
     phone_numbers = r.findall(string)
     for i in phone_numbers:
         if len(i)>9: return i
-  return "NA"
+    return "NA"
 
 
 def email_id(string):
