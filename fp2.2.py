@@ -14,7 +14,7 @@ import os
 
 # Getting the current work directory (cwd)
 thisdir = os.getcwd()
-thisdir = "Resumes_Supply Chain"
+thisdir = "Resume_Supply_Chain"
 #jddir = str(os.getcwd())+"/drive/MyDrive/Content/"
 # r=root, d=directories, f = files
 word_files = []
