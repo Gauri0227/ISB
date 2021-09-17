@@ -20,7 +20,7 @@ from sklearn.metrics.pairwise import euclidean_distances
 
 # import docx
 
-pip3 install tika
+#pip3 install tika
 
 from google.colab import drive
 
