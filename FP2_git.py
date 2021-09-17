@@ -38,10 +38,10 @@ resume2=raw_resume_ds2['content']
 raw_resume_ds3 = parser.from_file('JayBakshi.pdf')
 resume3=raw_resume_ds3['content']
 
-raw_resume_ds4 = parser.from_file('Aman.pdf')
+raw_resume_ds4 = parser.from_file('1.pdf')
 resume4=raw_resume_ds4['content']
 
-raw_resume_ds4 = parser.from_file('Raman.pdf')
+raw_resume_ds4 = parser.from_file('2.pdf')
 resume5=raw_resume_ds4['content']
 
 raw_resume_PM = parser.from_file('PM.pdf')
