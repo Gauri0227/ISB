@@ -7,15 +7,15 @@ Original file is located at
     https://colab.research.google.com/drive/1YTezDIUXfVnp_mERMBzZQTQet2yDSCGV
 """
 
-from google.colab import drive
-drive.mount('/content/drive')
+#from google.colab import drive
+#drive.mount('/content/drive')
 
 import os
 
 # Getting the current work directory (cwd)
 thisdir = os.getcwd()
-thisdir = thisdir+"/drive/MyDrive/Content/"+"Resumes_Supply Chain"
-jddir = str(os.getcwd())+"/drive/MyDrive/Content/"
+thisdir = "Resumes_Supply Chain"
+#jddir = str(os.getcwd())+"/drive/MyDrive/Content/"
 # r=root, d=directories, f = files
 word_files = []
 pdf_files = []
@@ -52,7 +52,7 @@ content=[]
 df=pd.DataFrame()
 name.append("jd")
 print(jddir)
-content.append(parser.from_file(jddir+"JD.docx")["content"])
+content.append(parser.from_file("JD.docx")["content"])
 for i in range(len(pdf_files)):
   name.append(re.sub(r'[^a-zA-Z]','',pdf_files[i].split(".")[0]))
   content.append(parser.from_file(thisdir+"/"+pdf_files[i])["content"])
