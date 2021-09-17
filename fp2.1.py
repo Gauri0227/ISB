@@ -16,11 +16,11 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.metrics.pairwise import euclidean_distances
 
-# !pip install docx
+# !pip3 install docx
 
 # import docx
 
-pip install tika
+pip3 install tika
 
 from google.colab import drive
 
