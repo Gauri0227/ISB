@@ -29,6 +29,8 @@ from sklearn.metrics.pairwise import euclidean_distances
 
 #path = "/content/drive/MyDrive/ColabNotebooks/FP2"
 
+import tika
+tika.initVM()
 from tika import parser 
 # pip install tika
 
