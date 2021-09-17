@@ -9,6 +9,9 @@ Original file is located at
 
 #from google.colab import drive
 #drive.mount('/content/drive')
+from datetime import datetime
+start_time = datetime.now()
+
 
 import os
 
@@ -89,3 +92,7 @@ final_output['Score']=output
 final_output.drop(final_output.head(1).index, inplace=True)
 
 print(final_output.sort_values(by=['Score'],ascending=False).head(10))
+
+
+end_time = datetime.now()
+print('Duration: {}'.format(end_time - start_time))
