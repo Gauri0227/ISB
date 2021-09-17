@@ -51,7 +51,7 @@ name=[]
 content=[]
 df=pd.DataFrame()
 name.append("jd")
-print(jddir)
+#print(jddir)
 content.append(parser.from_file("JD.docx")["content"])
 for i in range(len(pdf_files)):
   name.append(re.sub(r'[^a-zA-Z]','',pdf_files[i].split(".")[0]))
