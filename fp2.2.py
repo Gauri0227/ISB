@@ -50,21 +50,49 @@ from nltk import FreqDist
 import pandas as pd
 import numpy as np
 
+def phone_no(string):
+    r = re.compile(r'(\d{3}[-\.\s]??\d{3}[-\.\s]??\d{4}|\(\d{3}\)\s*\d{3}[-\.\s]??\d{4}|\d{3}[-\.\s]??\d{4})')
+    phone_numbers = r.findall(string)
+    for i in phone_numbers:
+        if len(i)>9: return i
+  return "NA"
+
+
+def email_id(string):
+  r = re.compile(r'[\w\.-]+@[\w\.-]+')
+  emails = r.findall(string)
+  if len(emails)>0: return emails[0]
+  return "NA"
+
 name=[]
 content=[]
+phone=[]
+email=[]
 df=pd.DataFrame()
 name.append("jd")
-#print(jddir)
+email.append("NA")
+phone.append("NA")
+
 content.append(parser.from_file("JD.docx")["content"])
+
 for i in range(len(pdf_files)):
+  c=parser.from_file(thisdir+"/"+pdf_files[i])["content"]
   name.append(re.sub(r'[^a-zA-Z]','',pdf_files[i].split(".")[0]))
   content.append(parser.from_file(thisdir+"/"+pdf_files[i])["content"])
+  phone.append(phone_no(c))
+  email.append(email_id(c))
+
 for j in range(len(word_files)):
+  d=parser.from_file(thisdir+"/"+pdf_files[i])["content"]
   name.append(re.sub(r'[^a-zA-Z]','',word_files[j].split(".")[0]))
   content.append(parser.from_file(thisdir+"/"+word_files[j])["content"])
+  phone.append(phone_no(d))
+  email.append(email_id(d))
 
 df["Names"]=name
 df["Resume"]=content
+df["Phone"]=phone
+df["Email"]=email
 
 #nltk.download("stopwords")
 stop_words_l=stopwords.words('english')
@@ -88,11 +116,13 @@ final_output=pd.DataFrame()
 
 final_output['CName']=name
 final_output['Score']=output
-
+final_output['Phone']=phone
+final_output['Email']=email
 final_output.drop(final_output.head(1).index, inplace=True)
+
 
 print(final_output.sort_values(by=['Score'],ascending=False).head(10))
 
 
 end_time = datetime.now()
-print('Duration: {}'.format(end_time - start_time))
+print('Runtime Duration: {}'.format(end_time - start_time))
