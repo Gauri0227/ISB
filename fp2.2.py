@@ -63,7 +63,7 @@ for j in range(len(word_files)):
 df["Names"]=name
 df["Resume"]=content
 
-nltk.download("stopwords")
+#nltk.download("stopwords")
 stop_words_l=stopwords.words('english')
 
 df["Resume"]=df["Resume"].apply(lambda x: " ".join(re.sub(r'[^a-zA-Z]',' ',w).lower() for w in x.split() if re.sub(r'[^a-zA-Z]',' ',w).lower() not in stop_words_l))
