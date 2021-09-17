@@ -26,10 +26,10 @@ for r, d, f in os.walk(thisdir):
         if file.endswith(".docx"):
           word_files.append(file)
 
-!pip install python-docx
-!pip install tika
-!pip install docx2python
-!pip install docx2txt
+#!pip install python-docx
+#!pip install tika
+#!pip install docx2python
+#!pip install docx2txt
 
 from docx import Document
 from tika import parser
